@@ -399,6 +399,47 @@ header {
     color: var(--secondary-color);
 }
 
+/* Gallery */
+.gallery-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 968px) {
+    .gallery-grid {
+        column-count: 2;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .gallery-grid {
+        column-count: 1;
+    }
+}
+
 /* Contact */
 .contact {
     background-color: var(--light-bg);
@@ -605,6 +646,11 @@ header {
         top: 1.5rem;
         right: 1.5rem;
         color: var(--text-color);
+    }
+
+    .header-container {
+        padding-right: 2rem;
+        /* Ensure space for the toggle button */
     }
 
     .hero-title {
